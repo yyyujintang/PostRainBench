@@ -1,4 +1,7 @@
 # PostRainBench
+
+![Stars](https://img.shields.io/github/stars/yyyujintang/PostRainBench)
+
 ## Introduction
 
 This is the official PyTorch implementation of PostRainBench: [PostRainBench: A comprehensive benchmark and a new model for precipitation forecasting](https://arxiv.org/abs/2310.02676). 
