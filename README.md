@@ -4,11 +4,11 @@
 
 ## Introduction
 
-This is the official PyTorch implementation of PostRainBench: [PostRainBench: A comprehensive benchmark and a new model for precipitation forecasting](https://arxiv.org/abs/2310.02676). 
+This is the official PyTorch implementation of PostRainBench: [PostRainBench: A comprehensive benchmark and a new model for precipitation forecasting](https://arxiv.org/abs/2310.02676).
 
-**Full source code is expected to be released upon conference acceptance.**
+**🎉🎉** PostRainBench was accepted as a **spotlight paper** by ICLR24 Workshop: Tackling Climate Change with Machine Learning! 
 
-## Overview 
+## Overview
 
 ![alt text](./pic/PostRainBench.png)
 
@@ -30,13 +30,47 @@ Extensive experimental results on the proposed benchmark show that our method ou
 
 ### 🌟 Alation Study
 
-We conduct an ablation study by systematically disabling certain components of our CAMT Component and evaluating the CSI results for both rain and heavy rain. Specifically, we focus on the weighted loss, multi-task learning, and channel attention modules as these are unique additions to the Swin-Unet backbone. 
+We conduct an ablation study by systematically disabling certain components of our CAMT Component and evaluating the CSI results for both rain and heavy rain. Specifically, we focus on the weighted loss, multi-task learning, and channel attention modules as these are unique additions to the Swin-Unet backbone.
 
-In the first part, we use Swin-Unet with CAMT framework (a) as a baseline and we disable each component in CAMT and demonstrate their respective outcomes. In the second part, we use Swin-Unet without CAMT framework (e) as a baseline and we gradually add each component to the model to understand its role. 
+In the first part, we use Swin-Unet with CAMT framework (a) as a baseline and we disable each component in CAMT and demonstrate their respective outcomes. In the second part, we use Swin-Unet without CAMT framework (e) as a baseline and we gradually add each component to the model to understand its role.
 
 ![alt text](./pic/Ablation.png)
 
 Although Swin-Unet can achieve a relatively high CSI when used alone (e), it does not have the ability to predict heavy rain. Importantly, these three enhancements complement each other. Weighted loss and multi-task learning are effective in improving simultaneous forecasting under the unbalanced distribution of light rain and heavy rain, while CAM provides comprehensive improvements.
+
+## Dataset
+
+Korea Dataset:
+
+https://www.dropbox.com/sh/vbme8g8wtx9pitg/AAAB4o6_GhRq0wMc1JxdXFrVa?dl=0
+
+Germany Dataset：
+
+https://zenodo.org/records/7244319
+
+China Dataset:
+
+https://drive.google.com/file/d/1rBvxtQ8Gh9dXzh-okEOVpA8ZeDzr7yAI/view?usp=drive_link
+
+## Code
+
+Conda Environment
+
+```
+conda env create --file enviromental.yml
+conda activate PRBench
+```
+
+For model training
+
+```
+bash scripts/SwinUnet_CAMT.sh
+```
+
+Key components of our model are encapsulated in:
+
+- `/model/swinunet_model.py`: Defines the `SwinUnet_CAM_Two` class, incorporating the SwinUnet architecture, multi-task learning heads, and the Channel Attention Module.
+- `losses.py`: Including the weighted loss and multi-task learning loss functions.
 
 ## Acknowledgement
 
