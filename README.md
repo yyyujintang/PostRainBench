@@ -84,7 +84,7 @@ https://github.com/HuCaoFighting/Swin-Unet
 
 ## Contact
 
-If you have any questions or concerns, please submit an issue on GitHub. You can also email me at yujintang@hkust-gz.edu.cn.
+If you have any questions or find any bugs,feel free to open an issue on GitHub. You can also email me at tangyujin0275@gmail.com.
 
 ## Citation
 
