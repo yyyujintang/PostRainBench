@@ -1,5 +1,5 @@
 export CUDA_VISIBLE_DEVICES=0
-python train.py --model="unet" --device=0 --seed=0 --input_data="gdaps_kim" \
+python train_Korea.py --model="unet" --device=0 --seed=0 --input_data="gdaps_kim" \
                 --num_epochs=20  --normalization \
                 --rain_thresholds 0.1 10.0 \
                 --start_lead_time 6 --end_lead_time 88 \

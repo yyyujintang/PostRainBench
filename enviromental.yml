@@ -1,4 +1,4 @@
-name: climaX
+name: PRBench
 channels:
   - pytorch
   - conda-forge
